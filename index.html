@@ -7,7 +7,7 @@
     <meta name="robots" content="noindex">
     <title>User Online</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="manifest" href="/users/manifest.json" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#e0e7ff" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/users/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/main.css">
 </head>
 
 <body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
@@ -66,11 +66,11 @@
         <span class="text-base md:text-xl">📊</span>
     </button>
 
-    <script src="/users/main.js"></script>
+    <script src="/main.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/users/service-worker.js')
+                navigator.serviceWorker.register('/service-worker.js')
                 .then(reg => console.log('✅ Service Worker registered!', reg))
                 .catch(err => console.error('❌ SW registration failed:', err));
             });
