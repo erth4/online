@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'b4f9a1c';
+const CACHE_VERSION = 'b4f9a1d';
 const CACHE_NAME = `user-online-pwa-${CACHE_VERSION}`;
 
 const urlsToCache = [
