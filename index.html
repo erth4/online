@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>User Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="/users/manifest.json" />
+    <meta name="theme-color" content="#e0e7ff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/users/main.css">
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div
+            class="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 floating-animation">
+        </div>
+        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 floating-animation"
+            style="animation-delay: 2s;"></div>
+        <div class="absolute top-40 left-40 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 floating-animation"
+            style="animation-delay: 4s;"></div>
+    </div>
+
+    <header
+        class="sticky top-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 backdrop-blur border-b border-gray-200 z-50 shadow-sm">
+        <div class="max-w-10xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <a href="" class="text-xl font-bold text-gray-800 truncate max-w-[150px] overflow-hidden whitespace-nowrap"
+                id="info-user-online">
+                User Online
+            </a>
+
+            <nav class="space-x-4">
+                <a href="javascript:;"
+                    class="text-gray-700 hover:text-blue-600 truncate max-w-[150px] overflow-hidden whitespace-nowrap inline-block align-middle">
+                    <i class="fa fa-heart text-red-600"></i> Ertha Ganteng
+                </a>
+            </nav>
+        </div>
+
+    </header>
+
+    <div id="showNoUserOnline"></div>
+
+    <div class="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-5 z-[1]">
+        <div id="log" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+        </div>
+    </div>
+
+    <button type="button" onclick="showModalMonitoring()" class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[9]
+           bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 backdrop-blur border-b border-gray-200 z-50 shadow-md
+           text-white rounded-full shadow-lg 
+           hover:shadow-2xl hover:scale-110 active:scale-95
+           transition-all duration-300 ease-out
+           w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+        <span class="text-base md:text-xl">📊</span>
+    </button>
+
+    <script src="/users/main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/users/service-worker.js')
+                .then(reg => console.log('✅ Service Worker registered!', reg))
+                .catch(err => console.error('❌ SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+
+</html>
