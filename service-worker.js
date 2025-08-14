@@ -1,4 +1,6 @@
-const CACHE_NAME = 'user-online-pwa-v2';
+const CACHE_VERSION = 'b4f9a1c';
+const CACHE_NAME = `user-online-pwa-${CACHE_VERSION}`;
+
 const urlsToCache = [
     '/',
     '/index.html',
@@ -13,6 +15,7 @@ self.addEventListener('install', (event) => {
             return cache.addAll(urlsToCache);
         })
     );
+    self.skipWaiting();
 });
 
 self.addEventListener('fetch', (event) => {
@@ -30,7 +33,7 @@ self.addEventListener('activate', (event) => {
                 cacheNames.filter(name => name !== CACHE_NAME)
                     .map(name => caches.delete(name))
             );
-        }).then(() => clients.claim())
+        }).then(() => self.clients.claim())
     );
 });
 
@@ -57,9 +60,8 @@ self.addEventListener("notificationclick", event => {
                     return client.focus();
                 }
             }
-            
             if (clients.openWindow) {
-                return clients.openWindow("https://erth4.github.io/users/");
+                return clients.openWindow("https://user-online.vercel.app");
             }
         })
     );
