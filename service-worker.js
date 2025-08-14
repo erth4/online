@@ -1,10 +1,10 @@
 const CACHE_NAME = 'user-online-pwa-v2';
 const urlsToCache = [
-    '/users/',
-    '/users/index.html',
-    '/users/main.css',
-    '/users/main.js',
-    '/users/favicon.ico'
+    '/',
+    '/index.html',
+    '/main.css',
+    '/main.js',
+    '/favicon.ico'
 ];
 
 self.addEventListener('install', (event) => {
@@ -39,8 +39,8 @@ self.addEventListener("message", event => {
     if (data.type === "SHOW_ACTIVE_USERS") {
         self.registration.showNotification("📊 Pengguna Aktif", {
             body: `Saat ini ada ${data.count} pengguna aktif.`,
-            icon: "/users/favicon.ico",
-            badge: "/users/favicon.ico",
+            icon: "/favicon.ico",
+            badge: "/favicon.ico",
             tag: "active-users",
             renotify: false
         });
