@@ -40,14 +40,24 @@
                 User Online
             </a>
 
-            <nav class="space-x-4">
-                <a href="javascript:;"
-                    class="text-gray-700 hover:text-blue-600 truncate max-w-[150px] overflow-hidden whitespace-nowrap inline-block align-middle">
-                    <i class="fa fa-heart text-red-600"></i> Ertha Ganteng
-                </a>
+            <nav class="relative">
+                <button id="userMenuBtn" class="text-gray-700 hover:text-blue-600 p-2 rounded focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 15.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z" />
+                    </svg>
+                </button>
+
+                <div id="userDropdown"
+                    class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 scale-95 transform transition-all duration-200 ease-out origin-top-right pointer-events-none">
+                    <a href="javascript:;" onclick="btnPengaturan()"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pengaturan</a>
+                    <a href="javascript:;" onclick="btnLogoutApp()"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Keluar</a>
+                </div>
             </nav>
         </div>
-
     </header>
 
     <div id="showNoUserOnline"></div>
