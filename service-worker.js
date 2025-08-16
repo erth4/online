@@ -5,6 +5,8 @@ const urlsToCache = [
     '/',
     '/index.html',
     '/main.css',
+    '/db.js',
+    '/helper.js',
     '/main.js',
     '/favicon.ico'
 ];
