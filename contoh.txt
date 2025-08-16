@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh</title>
+</head>
+<body>
+    <h1>Halo...</h1>
+
+    <script>
+        const uo_access_token = "namatokensaya";
+        let data_user = {
+            serialkey: "Nama Website",
+            payload: {
+                "Nama": "Mantap",
+                "Level": "Operator"
+            }
+        };
+    </script>
+    <script src="https://masertadev.github.io/lib/analytics.js"></script>
+</body>
+</html>
